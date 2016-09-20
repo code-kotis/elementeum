@@ -10,7 +10,7 @@ class App extends Component {
         return (
            <div>
             <div className='element' id={element}> {element} </div>
-            <ElementInfo info={...pt.elements[element]}/>
+            <ElementInfo {...pt.elements[element]}/>
            </div>
         );
       })}

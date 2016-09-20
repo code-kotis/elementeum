@@ -4,8 +4,8 @@ import './ElementInfo.css';
 class ElementInfo extends Component {
   render() {
     return <div className='element--info'>
-        {Object.keys(this.props.info, elemProp => {
-           return <span className={info} id={info}>{this.props.info[elemProp] || null}</span>
+        {Object.keys(this.props, elemProp => {
+           return <span className={elemProp} id={elemProp}>{this.props[elemProp] || null}</span>
         })}
     </div>
   }
