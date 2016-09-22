@@ -6,7 +6,11 @@ class ElementInfo extends Component {
     return <div className="element--info">
     {
       Object.keys(this.props, elemProp => {
-        return <span className={elemProp} id={elemProp}>{this.props[elemProp] || null}</span>
+        return (
+          <span>
+            <span className={elemProp} id={elemProp}>{this.props[elemProp] || null}</span>
+          </span>
+        )
       })
     }
     </div>

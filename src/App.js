@@ -5,13 +5,20 @@ import pt from 'periodic-table';
 
 class App extends Component {
   render() {
+    console.log(pt.symbols);
     return <div className="main">
     {
-      Object.keys(pt.elements).map(element => {
+      Object.keys(pt.symbols).map(symbol => {
+        var style = {
+          background: '#' + pt.symbols[symbol].cpkHexColor
+        };
         return (
-          <div key={element}>
-            <div className="element" id={element}> {element} </div>
-            <ElementInfo {...pt.elements[element]}/>
+          <div key={symbol}>
+            <div className="element" id={symbol} style={style}>
+              <span className="element__symbol">{symbol}</span>
+              <span className="element__name">{pt.symbols[symbol].name}</span>
+            </div>
+            <ElementInfo {...pt.symbols[symbol]}/>
           </div>
         );
       })

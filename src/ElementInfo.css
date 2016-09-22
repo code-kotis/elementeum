@@ -1,6 +1,7 @@
 .element--info {
-  visibility: hidden;
+  display: none;
 }
+
 .atomicNumber{}
 .symbol{}
 .name{}
