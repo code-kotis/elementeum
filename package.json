@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "copy": "^0.3.0",
+    "postcss": "^5.2.0",
     "react-scripts": "0.4.1",
     "sw-precache": "^4.0.0"
   },
