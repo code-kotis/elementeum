@@ -1,11 +1,34 @@
 import React, { Component } from 'react';
 import ElementInfo from './ElementInfo';
 import ScrollNavigation from './ScrollNavigation';
+import Modal from './Modal';
 import './App.css';
 import pt from 'periodic-table';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
+    };
+    this.showDetails = this.showDetails.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  showDetails() {
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false
+    });
+  }
+
   render() {
+    const {showModal} = this.state;
     return <div className="main">
     <ScrollNavigation />
     <div className="main__container">
@@ -16,16 +39,17 @@ class App extends Component {
           };
           return (
             <div key={symbol}>
-              <div className="element" id={symbol} style={style}>
+              <div className="element" id={symbol} style={style} onClick={this.showDetails}>
                 <span className="element__symbol">{symbol}</span>
                 <span className="element__name">{pt.symbols[symbol].name}</span>
+                <ElementInfo {...pt.symbols[symbol]}/>
               </div>
-              <ElementInfo {...pt.symbols[symbol]}/>
             </div>
           );
         })
       }
       </div>
+      <Modal show={showModal} closeCallback={this.closeModal} />
     </div>
   }
 }

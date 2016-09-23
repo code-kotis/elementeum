@@ -34,6 +34,10 @@
   line-height: 25px;
 }
 
+.main__header span:active {
+  background: #3c4455;
+}
+
 .element {
   width: 110px;
   min-height: 100px;
@@ -58,4 +62,48 @@
 
 .element__name {
   font-size: 12px;
+}
+
+.modal,
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__overlay {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.modal__container {
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+  transform: scale(0.1);
+  transition: all 0.3s ease-in;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.29);
+}
+
+.modal__container.show {
+  transform: scale(1);
 }
