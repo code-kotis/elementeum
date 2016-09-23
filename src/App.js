@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ElementInfo from './ElementInfo.jsx';
+import ElementInfo from './ElementInfo';
 import ScrollNavigation from './ScrollNavigation';
 import './App.css';
 import pt from 'periodic-table';
