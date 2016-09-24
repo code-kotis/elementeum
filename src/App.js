@@ -16,9 +16,7 @@ class App extends Component {
   }
 
   showDetails() {
-    this.setState({
-      showModal: !this.state.showModal
-    });
+
   }
 
   closeModal() {
@@ -39,7 +37,7 @@ class App extends Component {
           };
           return (
             <div key={symbol}>
-              <div className="element" id={symbol} style={style} onClick={this.showDetails}>
+              <div className="element ripple" id={symbol} style={style} onClick={this.showDetails}>
                 <span className="element__symbol">{symbol}</span>
                 <span className="element__name">{pt.symbols[symbol].name}</span>
                 <ElementInfo {...pt.symbols[symbol]}/>

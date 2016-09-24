@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
   background: #3c4455;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 *,

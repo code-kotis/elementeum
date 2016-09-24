@@ -19,6 +19,7 @@
   left: 0;
   right: 0;
   top: 0;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.26);
 }
 
 .main__header span {
@@ -31,7 +32,7 @@
   text-align: center;
   cursor: pointer;
   user-select: none;
-  line-height: 25px;
+  line-height: 30px;
 }
 
 .main__header span:active {
@@ -50,10 +51,7 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   user-select: none;
-}
-
-.element:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0.22);
+  animation: scaleUp 1s ease-out;
 }
 
 .element__symbol {
@@ -106,4 +104,17 @@
 
 .modal__container.show {
   transform: scale(1);
+}
+
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

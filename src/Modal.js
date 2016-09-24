@@ -12,7 +12,7 @@ class Modal extends Component {
     return <div className={modalClassName}>
       <div className="modal__overlay" onClick={closeCallback}></div>
       <div className={containerClassName}>
-        {this.props.children}  
+
       </div>
     </div>
   }
