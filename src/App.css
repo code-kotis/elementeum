@@ -89,8 +89,8 @@
 
 .modal__container {
   background: #fff;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   left: 0;
   right: 0;
@@ -98,8 +98,8 @@
   bottom: 0;
   top: 0;
   z-index: 1;
-  transform: scale(0.1);
-  transition: all 0.3s ease-in;
+  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.75,0,0.25,1);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.29);
 }
 
@@ -107,6 +107,62 @@
   transform: scale(1);
 }
 
+.modal__container.hide {
+  transform: scale(0.1);
+}
+
+.modal__content {
+  width: inherit;
+  height: inherit;
+  padding: 15px;
+  transform: rotateY(0);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+.modal__content:active {
+  transform: rotateY(-180deg);
+}
+
+.modal__element-symbol {
+  width: 60px;
+  padding-left: 5px;
+}
+
+.modal__element-info,
+.modal__element-symbol {
+  float: left;
+}
+
+.modal__element-symbol p:first-child {
+  margin-left: 4px;
+  font-weight: 300;
+}
+
+.modal__element-symbol p:last-child {
+  font-size: 35px;
+}
+
+.modal__element-info p {
+  font-size: 21px;
+}
+
+.modal__element-info span b {
+  font-weight: 500;
+}
+
+.modal__element-info span {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.modal__element-info {
+  margin-top: 25px;
+  margin-left: 10px;
+}
 
 @keyframes scaleUp {
   0% {

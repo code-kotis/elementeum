@@ -9,18 +9,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      elementInfo: "",
       showModal: false
     };
     this.showDetails = this.showDetails.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  showDetails() {
-    setTimeout(() => {
-      this.setState({
-        showModal: true
-      });
-    }, 500)
+  showDetails(event) {
+    this.setState({
+      elementInfo: event.currentTarget.id,
+      showModal: true
+    });
   }
 
   closeModal() {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const {showModal} = this.state;
+    const {elementInfo, showModal} = this.state;
     return <div className="main">
     <ScrollNavigation />
     <div className="main__container">
@@ -40,8 +40,8 @@ class App extends Component {
             background: '#' + pt.symbols[symbol].cpkHexColor
           };
           return (
-            <div key={symbol}>
-              <div className="element ripple" id={symbol} style={style} onClick={this.showDetails}>
+            <div key={symbol} id={symbol} onClick={this.showDetails}>
+              <div className="element" style={style}>
                 <span className="element__symbol">{symbol}</span>
                 <span className="element__name">{pt.symbols[symbol].name}</span>
                 <ElementInfo {...pt.symbols[symbol]}/>
@@ -51,7 +51,7 @@ class App extends Component {
         })
       }
       </div>
-      <Modal show={showModal} closeCallback={this.closeModal} />
+      <Modal closeCallback={this.closeModal} elementInfo={elementInfo} show={showModal} />
     </div>
   }
 }

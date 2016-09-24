@@ -1,6 +1,4 @@
 body {
-  margin: 0;
-  padding: 0;
   background: #3c4455;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -19,17 +17,20 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.2;
   vertical-align: middle;
+  margin: 0;
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.6em;
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: outset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: outset 0 0 6px rgba(0,0,0,0.5);
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: #333946;
   outline: 1px solid #3c4455;
+  border-radius: 10px;
 }
