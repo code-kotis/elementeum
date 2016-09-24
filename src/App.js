@@ -16,7 +16,11 @@ class App extends Component {
   }
 
   showDetails() {
-
+    setTimeout(() => {
+      this.setState({
+        showModal: true
+      });
+    }, 500)
   }
 
   closeModal() {
