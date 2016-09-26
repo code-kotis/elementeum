@@ -17,8 +17,9 @@ class App extends Component {
   }
 
   showDetails(event) {
+    console.log(event.currentTarget.dataset);
     this.setState({
-      elementInfo: event.currentTarget.id,
+      elementInfo: event.currentTarget.dataset.elementInfo,
       showModal: true
     });
   }
@@ -36,11 +37,14 @@ class App extends Component {
     <div className="main__container">
       {
         Object.keys(pt.symbols).sort().map(symbol => {
+          var symbolName = symbol;
+          var id = symbolName.slice(0, 1);
+          console.log(symbol);
           var style = {
             background: '#' + pt.symbols[symbol].cpkHexColor
           };
           return (
-            <div key={symbol} id={symbol} onClick={this.showDetails}>
+            <div key={symbol} data-element-info={symbol} id={id} onClick={this.showDetails}>
               <div className="element" style={style}>
                 <span className="element__symbol">{symbol}</span>
                 <span className="element__name">{pt.symbols[symbol].name}</span>

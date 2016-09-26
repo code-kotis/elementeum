@@ -9,6 +9,7 @@ class Modal extends Component {
 
   render() {
     const {elementInfo, closeCallback, show} = this.props;
+    console.log(elementInfo);
     const element = pt.symbols[elementInfo];
     const modalClassName = show ? "modal show": "modal";
     const containerClassName = show ? "modal__container show": "modal__container";
@@ -20,15 +21,15 @@ class Modal extends Component {
           show && <div className="modal__content">
             <div className="modal__element-symbol">
               <p>{element && element.atomicNumber}</p>
-              <p>{element.symbol}</p>
+              <p>{element && element.symbol}</p>
             </div>
             <div className="modal__element-info">
-              <p>{element.name}</p>
+              <p>{element && element.name}</p>
               {
-                element.boilingPoint && <span><b>Boiling Point:</b> {element.boilingPoint}</span>
+                element && <span><b>Boiling Point:</b> {element.boilingPoint}</span>
               }
               {
-                element.density && <span><b>Density:</b> {element.density}</span>
+                element && <span><b>Density:</b> {element.density}</span>
               }
             </div>
           </div>
