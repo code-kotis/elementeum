@@ -9,28 +9,32 @@ class Modal extends Component {
 
   render() {
     const {elementInfo, closeCallback, show} = this.props;
-    console.log(elementInfo);
     const element = pt.symbols[elementInfo];
-    const modalClassName = show ? "modal show": "modal";
-    const containerClassName = show ? "modal__container show": "modal__container";
+    const modalClassName = show ? "modal show": "modal hide";
+    const containerClassName = show ? "modal__container show": "modal__container hide";
 
     return <div className={modalClassName}>
       <div className="modal__overlay" onClick={closeCallback}></div>
       <div className={containerClassName}>
         {
-          show && <div className="modal__content">
-            <div className="modal__element-symbol">
-              <p>{element && element.atomicNumber}</p>
-              <p>{element && element.symbol}</p>
+          show && <div className="modal__content-container">
+            <div className="modal__content">
+              <div className="modal__element-symbol">
+                <p>{element && element.atomicNumber}</p>
+                <p>{element && element.symbol}</p>
+              </div>
+              <div className="modal__element-info">
+                <p>{element && element.name}</p>
+                {
+                  element && <span><b>Boiling Point:</b> {element.boilingPoint}</span>
+                }
+                {
+                  element && <span><b>Density:</b> {element.density}</span>
+                }
+              </div>
             </div>
-            <div className="modal__element-info">
-              <p>{element && element.name}</p>
-              {
-                element && <span><b>Boiling Point:</b> {element.boilingPoint}</span>
-              }
-              {
-                element && <span><b>Density:</b> {element.density}</span>
-              }
+            <div className="modal__content-details">
+              <div>{element.symbol}</div>
             </div>
           </div>
         }

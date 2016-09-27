@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   showDetails(event) {
-    console.log(event.currentTarget.dataset);
     this.setState({
       elementInfo: event.currentTarget.dataset.elementInfo,
       showModal: true
@@ -32,14 +31,14 @@ class App extends Component {
 
   render() {
     const {elementInfo, showModal} = this.state;
+    const classes = showModal ? "main__container blur" : "main__container";
     return <div className="main">
     <ScrollNavigation />
-    <div className="main__container">
+    <div className={classes}>
       {
         Object.keys(pt.symbols).sort().map(symbol => {
           var symbolName = symbol;
           var id = symbolName.slice(0, 1);
-          console.log(symbol);
           var style = {
             background: '#' + pt.symbols[symbol].cpkHexColor
           };

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import pt from 'periodic-table';
-import './App.css';
 
 class ScrollNavigation extends Component {
   constructor() {
