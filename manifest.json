@@ -1,0 +1,10 @@
+{
+  "short_name": "elementeum",
+  "name": "elementeum",
+  "icons": [{}],
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "theme_color": "#383f4c",
+  "background_color": "#3c4455"
+}
